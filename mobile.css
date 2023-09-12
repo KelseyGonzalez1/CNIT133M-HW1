@@ -55,8 +55,8 @@ a {
     color: #ffd700; 
 }
 #startAnimation {
-    background-color: #ffd700; /* Yellow background color */
-    color: #000; /* Text color for contrast */
+    background-color: #ffd700; 
+    color: #000; 
     padding: 10px 20px;
     border: none;
     cursor: pointer;
