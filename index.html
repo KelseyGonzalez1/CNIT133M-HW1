@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="mobile.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>CNIT 133M Mobile Web with HTML, CSS, JS</title>
   </head>
   <body>
     <header>
       <h1>CNIT 133M - Mobile Web Development</h1>
+      <button id="startAnimation">Start Animation</button>
+      <!-- User friendly at top of page -->
     </header>
     <section class="about-me">
       <img src="kelsey.JPG" alt="Kelsey Gonzalez" />
@@ -19,13 +22,13 @@
         Brazilian Jiu Jitsu.
       </p>
     </section>
-    <section class="CNIT133 Attendance">
+    <section>
       <p>
         I am attending CNIT 133M because I am pursuing an associates in Front
         End Web Development and this will help me offer more as a developer.
       </p>
     </section>
-    <section class="technologies">
+    <section>
       <h2>Technologies for this Class</h2>
       <ul>
         <li>HTML</li>
@@ -33,7 +36,7 @@
         <li>JavaScript</li>
       </ul>
     </section>
-    <section class="resources">
+    <section>
       <h2>Resources</h2>
       <ul>
         <li>
@@ -50,11 +53,50 @@
             href="https://www.w3schools.com/"
             target="_blank"
             rel="noopener noreferrer"
-            >We3Schools</a
+            >W3Schools</a
           >
-          - We3Schools offers tutorials and references for web development.
+          - W3Schools offers tutorials and references for web development.
         </li>
       </ul>
     </section>
+
+    <script>
+      $(document).ready(function () {
+        $("#startAnimation").click(function () {
+          $("h1").animate(
+            {
+              fontSize: "3em",
+            },
+            1000,
+            function () {
+              $("h1").animate(
+                {
+                  fontSize: "2em",
+                },
+                2000
+              );
+            }
+          );
+          // color unresponsive
+
+          var originalColor = $("h1").css("color");
+          $("h1").css("color", "#ff0000");
+
+          setTimeout(function () {
+            $("h1").css("color", originalColor);
+          }, 2000);
+
+          $(".about-me img").css({
+            border: "2px solid #ff0000",
+          });
+
+          setTimeout(function () {
+            $(".about-me img").css({
+              border: "none",
+            });
+          }, 2000);
+        });
+      });
+    </script>
   </body>
 </html>
